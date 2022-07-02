@@ -35,7 +35,7 @@ public class GrocerySim {
         ArrayList<Event> events = new ArrayList<>();
        ArrayList<Customer> customers = new ArrayList<>();
         try {
-        FileReader inputFile = new FileReader("Arrival simple.txt");
+        FileReader inputFile = new FileReader("Arrival medium.txt");
         Scanner fileIn = new Scanner(inputFile);
         int customerNumber = 0;
         
