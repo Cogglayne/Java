@@ -176,20 +176,20 @@ public class Cards {
         ArrayList<Player> players = new ArrayList<>();
         Deque<Card> discardPile = new ArrayDeque<>();
         Scanner in = new Scanner(System.in);
-        System.out.println("How many players? 1-4 players required");
+        System.out.println("How many players? 0-4 players required");
         boolean valid = false;
         int numPlayers = 0;
         while (!valid) {
             try {
                 numPlayers = in.nextInt();
 
-                if (numPlayers <= 4 && numPlayers != 0) {
+                if (numPlayers <= 4 && numPlayers >= 0) {
                     valid = true;
                 } else {
-                    System.out.println("How many players? 1-4 players required.");
+                    System.out.println("How many players? 0-4 players required.");
                 }
             } catch (InputMismatchException ex) {
-                System.out.println("How many players? 1-4 players required.");
+                System.out.println("How many players? 0-4 players required.");
                 in.next();
             }//catches and then clears incorrect scanner input
         }// continually asks for input while the input given is not 1 2 3 or 4, once a valid input is given valid is set to false
