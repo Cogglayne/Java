@@ -132,40 +132,7 @@ class BoardLayout extends JPanel {
         setLayout(new GridLayout(4, 3));
 
         for (int i = 0; i < squares.length; i++) {
-            final int test = i;
             squares[i] = new JTextField();
-            squares[i].setHorizontalAlignment(JTextField.CENTER);
-            squares[i].setFont(new Font("Times New Roman", Font.BOLD, 70));
-            squares[i].setBackground(Color.black);
-            squares[i].setForeground(Color.white);
-            squares[i].setCaretColor(Color.white);
-            add(squares[i]);
-            // changes the apperance and font of my JTextFields and then adds them to the JPanel
-            squares[i].addActionListener(e -> {
-                try {
-                    if (!squares[test].getText().equalsIgnoreCase(turn)) {
-                        if (squares[test].isFocusOwner()) {
-                            squares[test].setText("");
-                        } // if the text entered does not match turn then the textfield with the cursor is emptied
-
-                        alternateTurns();
-                        // alternates turns so a player who dosent put in the correct input won't lose their turn
-                    } else {
-                        squares[test].setEditable(false);
-                    }// after text is entered that matches the current turn the textfield is set to uneditable
-
-                    if (threeInARow()) {
-                        for (JTextField square : squares) {
-                            square.setEditable(false);
-                        }
-                    }// after a game has been won all textfields are set to uneditable
-                    alternateTurns();
-
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, " Hit start to play");
-
-                }
-            });
         }// creating the JTextfields for the game
 
         for (JTextField textField : squares) {
@@ -182,7 +149,7 @@ class BoardLayout extends JPanel {
                        if (textField.isFocusOwner()) {
                            textField.setText("");
                        } // if the text entered does not match turn then the textfield with the cursor is emptied
-
+                      
                        alternateTurns();
                        // alternates turns so a player who dosent put in the correct input won't lose their turn
                    } else {
@@ -194,6 +161,14 @@ class BoardLayout extends JPanel {
                            square.setEditable(false);
                        }
                    }// after a game has been won all textfields are set to uneditable
+                   for (JTextField square : squares) {
+                    if (square.isEditable()){
+                        if (square.getText() != ""){
+                            square.setText("");
+                        }
+                       }
+                }
+                  
                    alternateTurns();
 
                } catch (Exception ex) {
