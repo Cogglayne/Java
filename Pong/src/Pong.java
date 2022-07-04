@@ -37,7 +37,7 @@ class Pong extends JFrame {
 		scorePanel.add(rightLabel);
 
 		this.add(scorePanel, BorderLayout.SOUTH);
-
+		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setSize(500, 300);
 	}
@@ -114,7 +114,8 @@ class Pong extends JFrame {
 
 
 	public static void main(String[] args) {
-		new Pong().setVisible(true);
+		Pong pong = new Pong();
+		pong.setVisible(true);
 	}
 
 }

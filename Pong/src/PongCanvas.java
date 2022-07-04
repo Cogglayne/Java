@@ -1,8 +1,3 @@
-
-/**
- *
- * @author jorda
- */
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -89,19 +84,19 @@ public class PongCanvas extends JPanel {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				int key = e.getKeyCode();
-				if (key == KeyEvent.VK_BACK_SLASH) {
+				if (key == KeyEvent.VK_UP) {
 					rightUp = true;
 				}
 
-				if (key == KeyEvent.VK_ENTER) {
+				if (key == KeyEvent.VK_DOWN) {
 					rightDown = true;
 				}
 
-				if (key == KeyEvent.VK_Q) {
+				if (key == KeyEvent.VK_W) {
 					leftUp = true;
 				}
 
-				if (key == KeyEvent.VK_A) {
+				if (key == KeyEvent.VK_S) {
 					leftDown = true;
 				}
 			}
@@ -109,19 +104,19 @@ public class PongCanvas extends JPanel {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				int key = e.getKeyCode();
-				if (key == KeyEvent.VK_BACK_SLASH) {
+				if (key == KeyEvent.VK_UP) {
 					rightUp = false;
 				}
 
-				if (key == KeyEvent.VK_ENTER) {
+				if (key == KeyEvent.VK_DOWN) {
 					rightDown = false;
 				}
 
-				if (key == KeyEvent.VK_Q) {
+				if (key == KeyEvent.VK_W) {
 					leftUp = false;
 				}
 
-				if (key == KeyEvent.VK_A) {
+				if (key == KeyEvent.VK_S) {
 					leftDown = false;
 				}
 			}
@@ -131,7 +126,7 @@ public class PongCanvas extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.setColor(Color.red);
+		g.setColor(Color.white);
 		g.fillOval(ballX, ballY, ballSize, ballSize);
 		g.fillRect(0, leftY, 10, paddleHeight);
 		g.fillRect((int) getSize().getWidth()-10, rightY, 10, paddleHeight);
