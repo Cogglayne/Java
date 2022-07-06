@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -8,7 +7,8 @@ public class BruteForce {
      * @param items
      * @return
      * @throws InvalidArguementException Creates and returns the most optimal
-     * combination of items from an array list of items
+     *                                   combination of items from an array list of
+     *                                   items
      */
     public static ArrayList<Item> getOptimalSet(ArrayList<Item> items) throws InvalidArguementException {
         if (items.size() > 10) {
@@ -27,7 +27,8 @@ public class BruteForce {
                 optimalSet.add(item);
             }
             break;
-        }// for the first array list the included field for the items are set true and then those items are added to optimal set
+        } // for the first array list the included field for the items are set true and
+          // then those items are added to optimal set
         return optimalSet;
     }
 
@@ -58,7 +59,7 @@ public class BruteForce {
 
     /**
      * @param powerSet Finds the highest value combination of items and then
-     * removes any combination that is sub optimal
+     *                 removes any combination that is sub optimal
      */
     public static void findHighestValue(ArrayList<ArrayList<Item>> powerSet) {
         int sum = 0;
@@ -72,7 +73,8 @@ public class BruteForce {
                 if (highestValue < sum) {
                     highestValue = sum;
                 }
-                // sums up the value for each array list, if that array list's value is higher than highest value then it's value becomes highest value
+                // sums up the value for each array list, if that array list's value is higher
+                // than highest value then it's value becomes highest value
             }
             sum = 0;
             // sets sum to zero to calculate the next array list's value
@@ -87,14 +89,14 @@ public class BruteForce {
             }
             if (sum < highestValue) {
                 it.remove();
-            }// if the sets sum is lower than highst value then the array list is removed
+            } // if the sets sum is lower than highst value then the array list is removed
             sum = 0;
         }
     }
 
     /**
      * @param powerSet Finds array list with items that have to much weight and
-     * removes them
+     *                 removes them
      */
     public static void findToMuchWeight(ArrayList<ArrayList<Item>> powerSet) {
         Iterator<ArrayList<Item>> it = powerSet.iterator();
@@ -104,10 +106,10 @@ public class BruteForce {
             // type casts iterator to an array list of items
             for (Item item : items) {
                 totalWeight += item.getWeight();
-            }// calculate the weight for each array list of items
+            } // calculate the weight for each array list of items
             if (totalWeight > 10) {
                 it.remove();
-            }// if the array list's total weight is above 10 then it is removed
+            } // if the array list's total weight is above 10 then it is removed
             totalWeight = 0;
             // total weight set to 0 to calculate the next array list's total weight
         }

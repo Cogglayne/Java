@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
@@ -32,7 +31,7 @@ public class Player {
 
     /**
      * @param discardPile Discards a card from the computer players hand into
-     * the discard pile
+     *                    the discard pile
      */
     public void computerDiscard(Deque<Card> discardPile) {
         HashMap<String, Integer> numOfMatches = new HashMap<>();
@@ -43,7 +42,8 @@ public class Player {
             } else {
                 numOfMatches.put(card.getRank(), 1);
             }
-        }); // if its the first time that rank has been added then its added with a count of 1, otherwise an int is created with the current number
+        }); // if its the first time that rank has been added then its added with a count of
+            // 1, otherwise an int is created with the current number
         // of that rank and then that rank is put into the hash map with its new count
         int lowestOccurence = 5;
         // highest possible occurence is 4 so initial lowest is set to 5
@@ -53,7 +53,8 @@ public class Player {
                 lowestOccurence = numOfMatches.get(rank);
                 discard = rank;
             }
-        }// finds the the lowest occuring rank and then sets the discard string equal to that rank
+        } // finds the the lowest occuring rank and then sets the discard string equal to
+          // that rank
         if (hand.get(0).getRank().equals(discard)) {
             System.out.println("I will discard the " + hand.get(0));
             discardPile.offer(hand.remove(0));
@@ -70,12 +71,13 @@ public class Player {
             System.out.println("I will discard the " + hand.get(4));
             discardPile.offer(hand.remove(4));
         }
-        // finds the first card in the players hand that matches discard and then discards that card
+        // finds the first card in the players hand that matches discard and then
+        // discards that card
     }
 
     /**
      * @param discardPile Draws the top card from the discard pile and adds it
-     * to the computer players hand
+     *                    to the computer players hand
      */
     public void computerDraw(Deque<Card> discardPile) {
         Card card = discardPile.removeFirst();
@@ -85,7 +87,7 @@ public class Player {
 
     /**
      * @param drawPile Adds the first card from the draw pile into the computer
-     * players hand
+     *                 players hand
      */
     public void computerDraw(ArrayList<Card> drawPile) {
         Card card = drawPile.remove(0);
@@ -95,8 +97,9 @@ public class Player {
     /**
      * @param choice
      * @param discardPile Removes a card from the human players hand depending
-     * on which card they choose to discard and then adds that card to the
-     * discard pile
+     *                    on which card they choose to discard and then adds that
+     *                    card to the
+     *                    discard pile
      */
     public void discard(int choice, Deque<Card> discardPile) {
         System.out.println("You discarded " + hand.get(choice - 1));
@@ -105,7 +108,7 @@ public class Player {
 
     /**
      * @param discardPile Draws the top card from the discard pile and adds it
-     * to the human players hand
+     *                    to the human players hand
      */
     public void draw(Deque<Card> discardPile) {
         Card card = discardPile.removeFirst();
@@ -115,7 +118,7 @@ public class Player {
 
     /**
      * @param drawPile Draws the first card from the draw pile and adds it to
-     * the human players hand
+     *                 the human players hand
      */
     public void draw(ArrayList<Card> drawPile) {
         Card card = drawPile.remove(0);
@@ -131,7 +134,7 @@ public class Player {
             System.out.println(this.getPlayerType() + " " + this.getPlayerNumber() + " is the winner ");
         } else {
             System.out.println(this.getPlayerType() + " " + this.getPlayerNumber() + " Your cards are: ");
-        }// message changes depending on whether or not the player has won
+        } // message changes depending on whether or not the player has won
         for (int i = 0; i < this.hand.size(); i++) {
             System.out.println((i + 1) + " " + this.hand.get(i));
         }
@@ -139,11 +142,13 @@ public class Player {
 
     /**
      * @return Checks the players hand to see if they have won, if all four
-     * cards have the same rank then true is returned otherwise false is
-     * returned
+     *         cards have the same rank then true is returned otherwise false is
+     *         returned
      */
     public boolean winner() {
-        return hand.get(0).getRank().equals(hand.get(1).getRank()) && hand.get(0).getRank().equals(hand.get(2).getRank()) && hand.get(0).getRank().equals(hand.get(3).getRank());
+        return hand.get(0).getRank().equals(hand.get(1).getRank())
+                && hand.get(0).getRank().equals(hand.get(2).getRank())
+                && hand.get(0).getRank().equals(hand.get(3).getRank());
     }
 
 }

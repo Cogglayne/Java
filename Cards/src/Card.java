@@ -1,4 +1,3 @@
-
 public class Card {
 
     private final String rank;
@@ -15,7 +14,7 @@ public class Card {
 
     /**
      * @return to string for the cards that uses the usual card terminology ex
-     * two of hearts
+     *         two of hearts
      */
     @Override
     public String toString() {

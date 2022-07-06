@@ -1,4 +1,3 @@
-
 public class Event implements Comparable<Event> {
 
     private final Customer customer;

@@ -1,10 +1,10 @@
-
 import java.util.ArrayList;
 
 public class Deck {
 
-    private final static String[] suits = {"Hearts", "Clubs", "Spades", "Diamonds"};
-    private final static String[] ranks = {"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"};
+    private final static String[] suits = { "Hearts", "Clubs", "Spades", "Diamonds" };
+    private final static String[] ranks = { "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+            "Jack", "Queen", "King", "Ace" };
     private final ArrayList<Card> cards = new ArrayList<Card>();
 
     public Deck() {

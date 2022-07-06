@@ -1,4 +1,3 @@
-
 public class Item {
 
     private final String name;
@@ -16,7 +15,7 @@ public class Item {
         this.value = value;
         included = false;
     } // Initializes the Item’s fields to the values that are passed
-    // in; the included field is initialized to false
+      // in; the included field is initialized to false
 
     public Item(Item other) {
         this.name = other.name;

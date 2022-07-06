@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -19,8 +18,9 @@ public class Chromosome extends ArrayList<Item> implements Comparable<Chromosome
 
     /**
      * @param items Adds a copy of each of the items passed in to this
-     * Chromosome. Uses a random number to decide whether each item’s included
-     * field is set to true or false.
+     *              Chromosome. Uses a random number to decide whether each item’s
+     *              included
+     *              field is set to true or false.
      */
     public Chromosome(ArrayList<Item> items) {
 
@@ -38,17 +38,21 @@ public class Chromosome extends ArrayList<Item> implements Comparable<Chromosome
 
             add(new Item(items.get(i)));
 
-        }// if the random number that is generated is one then the included field is set to true
-        // otherwise the included field is set to false, a copy of the item is then added to the chromosome
+        } // if the random number that is generated is one then the included field is set
+          // to true
+          // otherwise the included field is set to false, a copy of the item is then
+          // added to the chromosome
 
     }
 
     /**
      * @param other
      * @return Creates and returns a new child chromosome by performing
-     * crossover on this chromosome and the other one that is passed in (i.e.for
-     * each item, use a random number to decide which parent’s item should be
-     * copied and added to the child).
+     *         crossover on this chromosome and the other one that is passed in
+     *         (i.e.for
+     *         each item, use a random number to decide which parent’s item should
+     *         be
+     *         copied and added to the child).
      */
     public Chromosome crossover(Chromosome other) {
         Chromosome child = new Chromosome();
@@ -63,8 +67,9 @@ public class Chromosome extends ArrayList<Item> implements Comparable<Chromosome
                 child.add(new Item(other.get(i)));
             }
 
-        }// creates a random number that is either 0 or 1 if the number is one a copy of the chromosome's item is added if the number is 0 
-        // then a copy of the other chromosome's item is added
+        } // creates a random number that is either 0 or 1 if the number is one a copy of
+          // the chromosome's item is added if the number is 0
+          // then a copy of the other chromosome's item is added
         return child;
     }
 
@@ -91,14 +96,16 @@ public class Chromosome extends ArrayList<Item> implements Comparable<Chromosome
                 }
             }
 
-        }// if the random number is one then the included field is set to true otherwise the included field is set to false
+        } // if the random number is one then the included field is set to true otherwise
+          // the included field is set to false
     }
 
     /**
      * @return Returns the fitness of this chromosome.If the sum of all of the
-     * included items’ weights are greater than 10, the fitness is zero.
-     * Otherwise, the fitness is equal to the sum of all of the included items’
-     * values.
+     *         included items’ weights are greater than 10, the fitness is zero.
+     *         Otherwise, the fitness is equal to the sum of all of the included
+     *         items’
+     *         values.
      */
     public int getFitness() {
         dummy = 0;
@@ -113,20 +120,22 @@ public class Chromosome extends ArrayList<Item> implements Comparable<Chromosome
                 totalWeight = totalWeight + i.getWeight();
                 totalValue = totalValue + i.getValue();
             }
-        }// if the included value is true calculate the totalWeight and totalValue
+        } // if the included value is true calculate the totalWeight and totalValue
         if (totalWeight > 10) {
             fitness = 0;
         } else {
             fitness = totalValue;
-        }// if the totalWeight is above ten then fitness is 0 otherwise fitness is the totalValue of the items
+        } // if the totalWeight is above ten then fitness is 0 otherwise fitness is the
+          // totalValue of the items
 
         return fitness;
     }
 
     /**
      * @param other Returns -1 if this chromosome’s fitness is greater than the
-     * other’s, +1 if this chromosome’s fitness is less than the other one’s,
-     * and 0 if their fitness is the same.
+     *              other’s, +1 if this chromosome’s fitness is less than the other
+     *              one’s,
+     *              and 0 if their fitness is the same.
      */
     @Override
     public int compareTo(Chromosome other) {
@@ -141,8 +150,9 @@ public class Chromosome extends ArrayList<Item> implements Comparable<Chromosome
 
     /**
      * @Overide Displays the name, weight and value of all items in this
-     * chromosome whose included value is true, followed by the fitness of this
-     * chromosome.
+     *          chromosome whose included value is true, followed by the fitness of
+     *          this
+     *          chromosome.
      */
     @Override
     public String toString() {
