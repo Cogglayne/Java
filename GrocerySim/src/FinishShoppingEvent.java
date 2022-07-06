@@ -14,7 +14,9 @@ class FinishShoppingEvent extends Event {
 
     @Override
     public String toString() {
-        return String.format("%.2f", this.getTime()) + " Finished Shopping Customer " + this.getCustomer().getCustomerNumber() + "\n" + items + " chose Lane " + this.getLaneNumber() + " (" + this.getLaneSize() + ")";
+        return String.format("%.2f", this.getTime()) + " Finished Shopping Customer "
+                + this.getCustomer().getCustomerNumber() + "\n" + items + " chose Lane " + this.getLaneNumber() + " ("
+                + this.getLaneSize() + ")";
 
     }
 }

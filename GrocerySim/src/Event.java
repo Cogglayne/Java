@@ -7,7 +7,7 @@ public class Event implements Comparable<Event> {
     private int laneSize;
     private double waitTime;
     private double frontOfTheLine;
-   
+
     public Event(Customer customer, double time) {
         this.customer = customer;
         this.time = time;
@@ -62,7 +62,3 @@ public class Event implements Comparable<Event> {
         return Double.compare(time, other.time);
     }
 }
-
-
-
-
