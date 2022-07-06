@@ -63,50 +63,6 @@ public class Event implements Comparable<Event> {
     }
 }
 
-class ArrivalEvent extends Event {
 
-    public ArrivalEvent(Customer customer, double time) {
-        super(customer, time);
-    }
 
-    @Override
-    public String toString() {
-        return String.format("%.2f", this.getTime()) + " Arrival Customer " + this.getCustomer().getCustomerNumber();
 
-    }
-}
-
-class FinishShoppingEvent extends Event {
-
-    private final String items;
-
-    public FinishShoppingEvent(Customer customer, double time) {
-        super(customer, time);
-        if (customer.getNumberOfItems() <= 12) {
-            items = "12 or fewer";
-        } else {
-            items = "More than 12";
-        }
-
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%.2f", this.getTime()) + " Finished Shopping Customer " + this.getCustomer().getCustomerNumber() + "\n" + items + " chose Lane " + this.getLaneNumber() + " (" + this.getLaneSize() + ")";
-
-    }
-}
-
-class FinishCheckoutEvent extends Event {
-
-    public FinishCheckoutEvent(Customer customer, double time) {
-        super(customer, time);
-
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%.2f", this.getTime()) + ": Finished Checkout Customer " + this.getCustomer().getCustomerNumber() + " on lane " + this.getLaneNumber() + " (" + this.getLaneSize() + ")" + "(" + String.format("%.2f", this.getWaitTime()) + " minute wait, there are " + this.getLaneSize() + " people in line" + " -- finished shopping at " + String.format("%.2f", this.getCustomer().getFinishShoppingTime()) + ", got to the front of the line at " + String.format("%.2f", this.getFrontOfTheLine())+ ")";
-
-    }
-}
