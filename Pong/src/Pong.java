@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -15,6 +14,10 @@ class Pong extends JFrame {
 	private JLabel leftLabel;
 	private JLabel rightLabel;
 
+	public static void main(String[] args) {
+		Pong pong = new Pong();
+		pong.setVisible(true);
+	}
 
 	public Pong() {
 
@@ -41,20 +44,6 @@ class Pong extends JFrame {
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setSize(500, 300);
 	}
-
-
-//	public void playSound() {
-//		try {
-//			String soundName = "bells.wav";    
-//			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName));
-//			Clip clip = AudioSystem.getClip();
-//			clip.open(audioInputStream);
-//			clip.start();
-//		} catch (Exception e) {
-//			System.out.println("Error playing sound: " + e);
-//		}
-//	}
-
 
 	public void leftPlayerScored() {
 		leftScore++;
@@ -111,11 +100,4 @@ class Pong extends JFrame {
 		rightScore = 0;
 		rightLabel.setText("Player 1: " + rightScore);
 	}
-
-
-	public static void main(String[] args) {
-		Pong pong = new Pong();
-		pong.setVisible(true);
-	}
-
 }
