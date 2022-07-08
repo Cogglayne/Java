@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Cards {
+public class Spoons {
 
     /**
      * @param player
@@ -118,7 +118,7 @@ public class Cards {
      */
     public static void computerMove(Player computer, Deque<Card> discardPile, ArrayList<Card> drawPile) {
         if (discardPile.isEmpty()) {
-            System.out.println(computer.getPlayerType() + " " + computer.getPlayerNumber()
+            System.out.print(computer.getPlayerType() + " " + computer.getPlayerNumber()
                     + " The discard pile is empty I will draw a new card");
             computer.computerDraw(drawPile);
             computer.computerDiscard(discardPile);
@@ -138,11 +138,11 @@ public class Cards {
                 if (drawPile.isEmpty()) {
                     drawPile.addAll(discardPile);
                     Collections.shuffle(drawPile);
-                    System.out.println(
+                    System.out.print(
                             computer.getPlayerType() + " " + computer.getPlayerNumber() + " I will draw a new card");
                     computer.computerDraw(drawPile);
                 } else {
-                    System.out.println(
+                    System.out.print(
                             computer.getPlayerType() + " " + computer.getPlayerNumber() + " I will draw a new card");
                     computer.computerDraw(drawPile);
                 } // if the draw pile is empty the discard pile becomes the new draw pile, then

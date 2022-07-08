@@ -29,7 +29,6 @@ public class Deck {
         for (int i = 0; i < 4; i++) {
             hand.add(deck.remove(i));
         }
-        System.out.println(hand);
         return hand;
     }
 

@@ -56,19 +56,19 @@ public class Player {
         } // finds the the lowest occuring rank and then sets the discard string equal to
           // that rank
         if (hand.get(0).getRank().equals(discard)) {
-            System.out.println("I will discard the " + hand.get(0));
+            System.out.println(" and I will discard the " + hand.get(0));
             discardPile.offer(hand.remove(0));
         } else if (hand.get(1).getRank().equals(discard)) {
-            System.out.println("I will discard the " + hand.get(1));
+            System.out.println(" and I will discard the " + hand.get(1));
             discardPile.offer(hand.remove(1));
         } else if (hand.get(2).getRank().equals(discard)) {
-            System.out.println("I will discard the " + hand.get(2));
+            System.out.println(" and I will discard the " + hand.get(2));
             discardPile.offer(hand.remove(2));
         } else if (hand.get(3).getRank().equals(discard)) {
-            System.out.println("I will discard the " + hand.get(3));
+            System.out.println(" and I will discard the " + hand.get(3));
             discardPile.offer(hand.remove(3));
         } else if (hand.get(4).getRank().equals(discard)) {
-            System.out.println("I will discard the " + hand.get(4));
+            System.out.println(" and I will discard the " + hand.get(4));
             discardPile.offer(hand.remove(4));
         }
         // finds the first card in the players hand that matches discard and then
@@ -81,7 +81,7 @@ public class Player {
      */
     public void computerDraw(Deque<Card> discardPile) {
         Card card = discardPile.removeFirst();
-        System.out.println(this.getPlayerType() + " " + this.getPlayerNumber() + " I will pick up the " + card);
+        System.out.print(this.getPlayerType() + " " + this.getPlayerNumber() + " I will pick up the " + card);
         hand.add(card);
     }
 
