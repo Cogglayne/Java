@@ -17,12 +17,13 @@ class Pong extends JFrame {
 	public static void main(String[] args) {
 		Pong pong = new Pong();
 		pong.setVisible(true);
+		
 	}
 
 	public Pong() {
 
 		super("Pong");
-	
+
 		this.setLayout(new BorderLayout());
 
 		PongCanvas canvas = new PongCanvas(this);
